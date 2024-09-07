@@ -1,5 +1,24 @@
 
 ```markdown
+# 🦋 Flutter State Restoration Demo
+
+This repository demonstrates the implementation of **state restoration** in Flutter apps, a feature that allows the app to retain user input or state even after being closed or minimized. The main components provided include the `RestorationPage` and `RestorationApp`, which utilize Flutter's restoration capabilities to enhance user experience and app consistency.
+
+## 🌟 Why This Repo and What It Provides
+
+This repository showcases a practical approach to state restoration in Flutter. It includes:
+
+1. **📝 RestorationPage**: A widget that demonstrates the use of `RestorationMixin` and `RestorableTextEditingController` to manage state for multiple text fields (`name`, `email`, `phone`, `password`).
+2. **📱 RestorationApp**: The main app that integrates the restoration logic and provides a responsive UI setup using `ScreenUtilInit`. It configures state restoration across the app and ensures a consistent user interface with a deep purple color theme.
+
+## 🚀 How to Use the Repo
+
+To get started with this repository:
+
+1. **📥 Clone or Download**: Clone the repository or download the zip file.
+   ```bash
+   git clone https://github.com/your-username/flutter-state-restoration-demo.git
+
 ## 🚀 How to Use the Repo
 
 2. **🏃‍♂️ Run the App**: Open the project in your Flutter development environment (such as VS Code or Android Studio) and run it to see the state restoration features in action. This includes:
