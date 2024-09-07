@@ -1,5 +1,4 @@
 
-```markdown
 # 🦋 Flutter State Restoration Demo
 
 This repository demonstrates the implementation of **state restoration** in Flutter apps, a feature that allows the app to retain user input or state even after being closed or minimized. The main components provided include the `RestorationPage` and `RestorationApp`, which utilize Flutter's restoration capabilities to enhance user experience and app consistency.
@@ -28,7 +27,7 @@ To get started with this repository:
    
    ```bash
    flutter run
-   ```
+
    
 3. **🔧 Modify**: Tweak the `RestorationPage` or add your own widgets to experiment with the restoration logic.
 
