@@ -18,8 +18,6 @@ To get started with this repository:
    ```bash
    git clone https://github.com/your-username/flutter-state-restoration-demo.git
 
-## 🚀 How to Use the Repo
-
 2. **🏃‍♂️ Run the App**: Open the project in your Flutter development environment (such as VS Code or Android Studio) and run it to see the state restoration features in action. This includes:
 
    - Restoring text field states after the app is closed or backgrounded.
