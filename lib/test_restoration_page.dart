@@ -8,13 +8,25 @@ class RestorationPage extends StatefulWidget {
   State<RestorationPage> createState() => _RestorationPageState();
 }
 
-class _RestorationPageState extends State<RestorationPage> with RestorationMixin {
+/// This widget enables restoration of text fields using the RestorationMixin.
+class _RestorationPageState extends State<RestorationPage>
+    // This mixin is used to enable state restoration for widgets in Flutter.
+    // It works by saving and restoring widget states like text fields.
+    with
+        RestorationMixin {
+// A special controller that automatically saves and restores its state across
+// app sessions. This is used for managing text inputs for fields like name,
+// email, phone, and password.
   late final RestorableTextEditingController _name;
   late final RestorableTextEditingController _email;
   late final RestorableTextEditingController _phone;
   late final RestorableTextEditingController _password;
 
   @override
+
+  /// Initializes the RestorableTextEditingController instances when the state
+  /// object is created. These controllers are used to handle the text input
+  /// for the respective fields.
   void initState() {
     super.initState();
     _name = RestorableTextEditingController();
@@ -23,10 +35,17 @@ class _RestorationPageState extends State<RestorationPage> with RestorationMixin
     _password = RestorableTextEditingController();
   }
 
+  /// This uniquely identifies the restoration scope for this page.
+  /// Flutter will use this ID to save and restore the state.
   @override
   String? get restorationId => 'restore_text_field';
 
   @override
+
+  /// Restores the state of the text fields. The registerForRestoration function
+  /// associates each RestorableTextEditingController with a key
+  /// (e.g., 'name', 'email'). This ensures the data persists even after the
+  /// app is restarted or the user navigates away.
   void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
     registerForRestoration(_name, 'name');
     registerForRestoration(_email, 'email');
@@ -36,7 +55,8 @@ class _RestorationPageState extends State<RestorationPage> with RestorationMixin
 
   @override
   Widget build(BuildContext context) {
-    return RestorationPageBody(name: _name, email: _email, phone: _phone, password: _password);
+    return RestorationPageBody(
+        name: _name, email: _email, phone: _phone, password: _password);
   }
 }
 
@@ -47,7 +67,10 @@ class RestorationPageBody extends StatelessWidget {
     required RestorableTextEditingController email,
     required RestorableTextEditingController phone,
     required RestorableTextEditingController password,
-  }) : _name = name, _email = email, _phone = phone, _password = password;
+  })  : _name = name,
+        _email = email,
+        _phone = phone,
+        _password = password;
 
   final RestorableTextEditingController _name;
   final RestorableTextEditingController _email;
@@ -119,4 +142,3 @@ class RestorationPageBody extends StatelessWidget {
     );
   }
 }
-
